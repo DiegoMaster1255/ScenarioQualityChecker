@@ -1,3 +1,6 @@
+package pl.put.poznan.transformer.app;
+
+
 public class Krok {
     String aktor;
     String wiersz;
