@@ -13,11 +13,16 @@ public class ScenariuszGlowny {
     List<Integer> listaNumerow = new ArrayList();
 
     public ScenariuszGlowny(String tytul, List<String> aktorzy, List<String> aktorzySystemowi, List<Podscenariusz> listaScenariuszy, List<Integer> listaNumerow) {
+        this(tytul, aktorzy,aktorzySystemowi,listaScenariuszy);
+        this.listaNumerow = listaNumerow;
+    }
+
+    public ScenariuszGlowny(String tytul, List<String> aktorzy, List<String> aktorzySystemowi, List<Podscenariusz> listaScenariuszy) {
         this.tytul = tytul;
         this.aktorzy = aktorzy;
         this.aktorzySystemowi = aktorzySystemowi;
         this.listaScenariuszy = listaScenariuszy;
-        this.listaNumerow = listaNumerow;
+
     }
 
     public ScenariuszGlowny(){}

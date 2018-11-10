@@ -6,9 +6,6 @@ public class Krok {
 
     public Krok(){}
 
-    public Krok(String wiersz){
-        this.wiersz = wiersz;
-    }
 
     public Krok(String aktor, String wiersz) {
         this(wiersz);
