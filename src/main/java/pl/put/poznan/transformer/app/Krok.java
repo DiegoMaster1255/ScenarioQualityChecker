@@ -4,9 +4,15 @@ public class Krok {
     String aktor;
     String wiersz;
 
-    public Krok(String aktor, String wiersz) {
-        this.aktor = aktor;
+    public Krok(){}
+
+    public Krok(String wiersz){
         this.wiersz = wiersz;
+    }
+
+    public Krok(String aktor, String wiersz) {
+        this(wiersz);
+        this.aktor = aktor;
     }
 
     public String getAktor() {

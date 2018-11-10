@@ -3,6 +3,7 @@ package pl.put.poznan.transformer.app;
 
 
 
+import b.d.K;
 import org.apache.commons.io.FileUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -95,38 +96,22 @@ public class TextTransformerApplication {
          }
          }
          **/
+        Konwerter konwerter = new Konwerter();
 
-        File file = new File("C:\\Users\\Kiranella\\IdeaProjects\\ScenarioQualityChecker-master\\src\\main\\" +
-                "java\\pl\\put\\poznan\\transformer\\app\\plik.json");
-        String content = null;
-        try {
-            content = FileUtils.readFileToString(file, "utf-8");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        ScenariuszGlowny scenariusz = konwerter.JSONtoJava(
+                "C:\\Users\\Radek\\git\\ScenarioQualityChecker\\src\\" +
+                        "main\\java\\pl\\put\\poznan\\transformer\\app\\plik.json");
+
+//        scenariusz.wypiszScenariusz();
+//        System.out.println(scenariusz.ileSlowKluczowych());
+
+
+
+        konwerter.toJSONScenariusz(scenariusz.scenariuszDoPoziomu(2),
+                "C:\\Users\\Radek\\git\\ScenarioQualityChecker\\" +
+                        "src\\main\\java\\pl\\put\\poznan\\transformer\\app\\out.json");
 
         // Convert JSON string to JSONObject
-        try {
-            JSONObject tomJsonObject = new JSONObject(content);
-            //String
-            String name = tomJsonObject.getString("Tytul");
-            System.out.println(name);
-            //Array
-            JSONArray favorite_foods = tomJsonObject.getJSONArray("Aktorzy");
-            for (int i = 0; i < favorite_foods.length(); i++) {
-                String food = (String) favorite_foods.get(i);
-                System.out.println(food);
-            }
-            JSONObject passportJsonObject = tomJsonObject.getJSONObject("Scenariusz glowny");
-            JSONArray cos = passportJsonObject.getJSONArray("Podscenariusze");
-            System.out.println(cos.get(0));
-            //JSONArray cos2 = cos.get(0);
-
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
 
     }
 }
