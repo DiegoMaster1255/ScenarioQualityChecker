@@ -21,14 +21,13 @@ import org.springframework.web.accept.ServletPathExtensionContentNegotiationStra
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.transformer.rest"})
 public class TextTransformerApplication {
 
-    public static ScenariuszGlowny stworzScenariusz()
+    public static ScenariuszGlowny stworzScenariusz(String path)
     {
         int ktoryScenariusz = -1;
         int liczbaKrokow = -1;
         int indeksik = 0;
 
-        File file = new File("C:\\Users\\Kiranella\\IdeaProjects\\ScenarioQualityChecker-master\\src\\main\\" +
-                "java\\pl\\put\\poznan\\transformer\\app\\plik.json");
+        File file = new File(path);
         String content = null;
         try {
             content = FileUtils.readFileToString(file, "utf-8");
@@ -128,16 +127,16 @@ public class TextTransformerApplication {
 
     public static void main(String[] args) {
         //SpringApplication.run(TextTransformerApplication.class, args);
-        /*
-        ScenariuszGlowny SC = stworzScenariusz();
-        List<Podscenariusz> lista = new ArrayList<>();
+
+        ScenariuszGlowny SC = stworzScenariusz("C:\\Users\\Radek\\git\\ScenarioQualityChecker\\src\\main\\java\\pl\\put\\poznan\\transformer\\app\\plik.json");
+        /*List<Podscenariusz> lista = new ArrayList<>();
         lista = SC.scenariuszDoPoziomu(2);
         SC.odczytajScenariusz(lista);
         System.out.println(SC.bledneKroki());
         System.out.println(SC.ileSlowKluczowych());
-        System.out.println(SC.ileKrokowMaScenariusz());
+        System.out.println(SC.ileKrokowMaScenariusz());*/
         SC.zapiszDoPliku();
-        */
+
 
 
     }

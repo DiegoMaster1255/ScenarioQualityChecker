@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Konwerter {
-
+/*
 	public ScenariuszGlowny JSONtoJava(String path)
 	{
 		File file = new File(path);
@@ -119,7 +119,7 @@ public class Konwerter {
 
 		return scenariusz;
 	}
-
+*/
 
 	public void toJSONLiczba(int liczba,int typ, String path){
 		JSONObject obj = new JSONObject();
