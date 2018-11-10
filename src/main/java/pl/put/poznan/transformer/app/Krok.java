@@ -9,6 +9,11 @@ public class Krok {
         this.wiersz = wiersz;
     }
 
+    public Krok( String wiersz){
+        this.wiersz = wiersz;
+        this.aktor = "";
+    }
+
     public String getAktor() {
         return aktor;
     }

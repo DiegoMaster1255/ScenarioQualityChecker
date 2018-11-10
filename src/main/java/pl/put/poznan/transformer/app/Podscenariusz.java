@@ -23,6 +23,7 @@ public class Podscenariusz extends ScenariuszGlowny{
     }
     public Podscenariusz() {
         super();
+        this.slowoKlucz = "";
     }
 
     public void wypelnij(int zagniezdzenie, int liczbaKrokow, String slowoKlucz) {
