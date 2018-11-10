@@ -15,6 +15,11 @@ public class Krok {
         this.aktor = aktor;
     }
 
+    public Krok( String wiersz){
+        this.wiersz = wiersz;
+        this.aktor = "";
+    }
+
     public String getAktor() {
         return aktor;
     }

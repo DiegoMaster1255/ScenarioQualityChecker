@@ -1,4 +1,5 @@
 package pl.put.poznan.transformer.app;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,13 +21,9 @@ public class Podscenariusz extends ScenariuszGlowny{
         this.liczbaKrokow = liczbaKrokow;
         this.slowoKlucz = slowoKlucz;
     }
-
     public Podscenariusz() {
         super();
-        this.zagniezdzenie = -1;
-        this.listaKrokow = new ArrayList<>();
-        this.liczbaKrokow = -1;
-
+        this.slowoKlucz = "";
     }
 
     public void wypelnij(int zagniezdzenie, int liczbaKrokow, String slowoKlucz) {
@@ -34,6 +31,8 @@ public class Podscenariusz extends ScenariuszGlowny{
         this.liczbaKrokow = liczbaKrokow;
         this.slowoKlucz = slowoKlucz;
     }
+
+
 
     public int getZagniezdzenie() {
         return zagniezdzenie;
