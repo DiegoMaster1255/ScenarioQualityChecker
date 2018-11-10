@@ -128,16 +128,18 @@ public class TextTransformerApplication {
 
     public static void main(String[] args) {
         //SpringApplication.run(TextTransformerApplication.class, args);
-        /*
+
         ScenariuszGlowny SC = stworzScenariusz();
         List<Podscenariusz> lista = new ArrayList<>();
-        lista = SC.scenariuszDoPoziomu(2);
+        lista = SC.scenariuszDoPoziomu(3);
         SC.odczytajScenariusz(lista);
-        System.out.println(SC.bledneKroki());
+        //System.out.println(SC.bledneKroki());
         System.out.println(SC.ileSlowKluczowych());
-        System.out.println(SC.ileKrokowMaScenariusz());
-        SC.zapiszDoPliku();
-        */
+        int ab = SC.ileSlowKluczowych();
+        //System.out.println(SC.ileKrokowMaScenariusz());
+        //SC.zapiszDoPliku();
+        Konwerter konwerter = new Konwerter();
+
 
 
     }
