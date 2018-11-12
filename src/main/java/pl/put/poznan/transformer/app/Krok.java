@@ -1,13 +1,20 @@
 package pl.put.poznan.transformer.app;
 
-
 public class Krok {
-    String aktor;
-    String wiersz;
+    public String aktor;
+    public String wiersz;
+
+    public Krok(){}
+
 
     public Krok(String aktor, String wiersz) {
+        this(wiersz);
         this.aktor = aktor;
+    }
+
+    public Krok( String wiersz){
         this.wiersz = wiersz;
+        this.aktor = "";
     }
 
     public String getAktor() {

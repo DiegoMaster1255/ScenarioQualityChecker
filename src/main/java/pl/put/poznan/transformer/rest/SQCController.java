@@ -17,14 +17,15 @@ public class SQCController {
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(@PathVariable String text,
-                      @RequestParam(value="funkcja", defaultValue="zliczKroki") String funkcja) {
+                      @RequestParam(value="funkcja", defaultValue="zliczKroki") String[] funkcja) {
 
         // log the parameters
         logger.debug(text);
-        logger.debug(funkcja);
+        logger.debug(Arrays.toString(funkcja));
 
 
         SQChecker Checker = new SQChecker(text);
+        Checker.check(funkcja);
         return Checker.check(funkcja);
     }
 

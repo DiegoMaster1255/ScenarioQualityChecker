@@ -1,33 +1,34 @@
 {
-  "Tytu³":"Dodanie ksi¹¿ki",
+  "Tytul":"Dodanie ksiazki",
   "Aktorzy" : ["Bibliotekarz"],
   "Aktorzy systemowi" : ["System"],
-  "Scenariusz g³ówny" :{
+  "Scenariusz glowny" :{
        "Podscenariusze":[
-          {
-            "Kroki":[
-			"Bibliotekarz wybiera opcje dodania nowej pozycji ksi¹¿kowej",
-			"Wyœwietla siê formularz.",
-			"Bibliotekarz podaje dane ksi¹¿ki.",
-			"IF: Bibliotekarz pragnie dodaæ egzemplarze ksi¹¿ki"]
-          },
+        {
+            "kroki":[
+			"Bibliotekarz wybiera opcje dodania nowej pozycji ksiazkowej",
+			"Wyswietla sie formularz.",
+			"Bibliotekarz podaje dane ksiazki.",
+			"IF: Bibliotekarz pragnie dodac egzemplarze ksiazki"]
+		}
+          ,
           {
             "kroki":[
-              "\tBibliotekarz wybiera opcjê definiowania egzemplarzy",
+              "\tBibliotekarz wybiera opcje definiowania egzemplarzy",
               "\tSystem prezentuje zdefiniowane egzemplarze",
               "\tFOR EACH egzemplarz:"]
           },
           {
             "kroki":[
-              "\t\tBibliotekarz wybiera opcjê dodania egzemplarza",
+              "\t\tBibliotekarz wybiera opcje dodania egzemplarza",
               "\t\tSystem prosi o podanie danych egzemplarza",
               "\t\tBibliotekarz podaje dane egzemplarza i zatwierdza.",
-              "\t\tSystem informuje o poprawnym dodaniu egzemplarza i prezentuje zaktualizowan¹ listê egzemplarzy."]
+              "\t\tSystem informuje o poprawnym dodaniu egzemplarza i prezentuje zaktualizowana liste egzemplarzy."]
           },
           {
             "kroki":[
-              "Bibliotekarz zatwierdza dodanie ksi¹¿ki.",
-              "System informuje o poprawnym dodaniu ksi¹¿ki."]
+              "Bibliotekarz zatwierdza dodanie ksiazki.",
+              "System informuje o poprawnym dodaniu ksiazki."]
           }
           
           

@@ -23,6 +23,13 @@ public class Podscenariusz extends ScenariuszGlowny{
     }
     public Podscenariusz() {
         super();
+        this.slowoKlucz = "";
+    }
+
+    public void wypelnij(int zagniezdzenie, int liczbaKrokow, String slowoKlucz) {
+        this.zagniezdzenie = zagniezdzenie;
+        this.liczbaKrokow = liczbaKrokow;
+        this.slowoKlucz = slowoKlucz;
     }
 
 
@@ -35,7 +42,7 @@ public class Podscenariusz extends ScenariuszGlowny{
         return listaKrokow;
     }
 
-    public int getLiczbaKrokkow() {
+    public int getLiczbaKrokow() {
         return liczbaKrokow;
     }
 
