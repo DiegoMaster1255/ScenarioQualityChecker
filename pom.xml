@@ -6,7 +6,7 @@
 
     <groupId>NajlepszaGrupaZIO</groupId>
     <artifactId>ScenarioQualityChecker</artifactId>
-    <version>0.1</version>
+    <version>0.3</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
