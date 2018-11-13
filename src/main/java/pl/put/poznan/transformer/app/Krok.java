@@ -34,7 +34,7 @@ public class Krok {
         return aktor;
     }
 
-    /** Zwraca tresc kroki.
+    /** Zwraca tresc kroku.
      * @return wiersz
      */
     public String getWiersz() {
@@ -48,7 +48,7 @@ public class Krok {
         this.aktor = aktor;
     }
 
-    /** Ustala tresc kroki.
+    /** Ustala tresc kroku.
      * @param wiersz tresc kroku.
      */
     public void setWiersz(String wiersz) {
