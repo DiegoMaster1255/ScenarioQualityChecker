@@ -5,6 +5,9 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa reprezentujaca scenariusz glowny.
+ */
 public class ScenariuszGlowny {
     /** tytul scenariusza. */
     String tytul;
