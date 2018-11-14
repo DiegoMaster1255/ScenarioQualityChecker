@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+/**
+ * Klasa reprezentujaca podscenariusz.
+ */
 public class Podscenariusz extends ScenariuszGlowny{
 
     /** glebokosc podscenariusza.*/
