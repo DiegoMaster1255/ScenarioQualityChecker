@@ -1,5 +1,8 @@
 package pl.put.poznan.transformer.app;
 
+/**
+ * Klasa reprezentujaca krok scenariusza.
+ */
 public class Krok {
     /**Aktor uczestniczacy w kroku.*/
     public String aktor;
