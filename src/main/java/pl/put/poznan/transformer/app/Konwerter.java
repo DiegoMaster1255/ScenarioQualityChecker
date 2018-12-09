@@ -1,5 +1,6 @@
 package pl.put.poznan.transformer.app;
 
+
 import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,7 +12,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa z funkcjonalnoscia zapewniajaca konwersje z Javy do Jsona
+ */
+
 public class Konwerter {
+
+    /**
+     * konwersja liczby typu int na Jsona
+     * @param liczba
+     * @param typ
+     * @param path
+     */
 
     public void toJSONLiczba(int liczba,int typ, String path){
         JSONObject obj = new JSONObject();
@@ -21,6 +33,12 @@ public class Konwerter {
             obj.put("liczba kluczy", String.valueOf(liczba));
         writeToFile(obj, path);
     }
+
+    /**
+     * konwersja listy stringow na Jsona
+     * @param lista
+     * @param path
+     */
 
     public void toJSONStringArray(List<String> lista, String path){
         JSONObject obj = new JSONObject();
@@ -33,6 +51,11 @@ public class Konwerter {
         writeToFile(obj, path);
     }
 
+    /**
+     * konwersja listy Podscenariuszy na Jsona
+     * @param scenariusze
+     * @param path
+     */
     public void toJSONScenariusz(List<Podscenariusz> scenariusze, String path){
         JSONObject obj = new JSONObject();
         JSONArray podscenariusze = new JSONArray();
@@ -50,6 +73,11 @@ public class Konwerter {
 
     }
 
+    /**
+     * Zapis objektow typu Json
+     * @param obj
+     * @param path
+     */
     private void writeToFile(JSONObject obj, String path){
 
         try (FileWriter file = new FileWriter(path)) {
