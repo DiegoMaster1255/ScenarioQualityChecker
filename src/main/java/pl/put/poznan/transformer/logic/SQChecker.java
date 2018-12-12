@@ -1,19 +1,14 @@
 package pl.put.poznan.transformer.logic;
 
 
-import pl.put.poznan.transformer.app.Konwerter;
-import pl.put.poznan.transformer.app.Krok;
-import pl.put.poznan.transformer.app.Podscenariusz;
-import pl.put.poznan.transformer.app.ScenariuszGlowny;
-
 import org.apache.commons.io.FileUtils;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import pl.put.poznan.transformer.app.*;
+
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -136,13 +131,17 @@ public class SQChecker {
         String wynik = "Bledna funkcja";
         Konwerter kon = new Konwerter();
         if(funkcja[0].equals("zliczKroki")){
-            int temp = scenario.ileKrokowMaScenariusz();
+            zliczKrokiVisitor v = new zliczKrokiVisitor();
+            scenario.accept(v);
+            int temp = v.getTotalKroki();
             wynik = "Ilosc krokow = " + String.valueOf(temp);
             System.out.println(temp);
             kon.toJSONLiczba(temp, 0, "output.json");
         }
         else if(funkcja[0].equals("bledneKroki")){
-            List<String> temp = scenario.bledneKroki();
+            BledneVisitor v = new BledneVisitor();
+            scenario.accept(v);
+            List<String> temp = v.getTotalBledne();
             StringBuilder sb = new StringBuilder();
             for(String s : temp){
                 sb.append(s);
@@ -152,22 +151,66 @@ public class SQChecker {
             kon.toJSONStringArray(temp, "output.json");
         }
         else if(funkcja[0].equals("slowaKluczowe")){
-            int temp = scenario.ileSlowKluczowych();
+            kluczoweVisitor v = new kluczoweVisitor();
+            scenario.accept(v);
+            int temp = v.getTotalKluczowe();
             wynik = "Slowa kluczowe = " + String.valueOf(temp);
             System.out.println(temp);
             kon.toJSONLiczba(temp, 1, "output.json");
         }
         else if(funkcja[0].equals("scenariuszDoPoziomu")){
-            List<Podscenariusz> temp = scenario.scenariuszDoPoziomu(Integer.valueOf(funkcja[1]));
+            DoPoziomuVisitor v = new DoPoziomuVisitor(Integer.valueOf(funkcja[1]));
+            scenario.accept(v);
+            List<Podscenariusz> temp = v.getDoPoziomu();
             wynik = "Scenariusz do poziomu w pliku output.json";
             kon.toJSONScenariusz(temp, "output.json");
         }
         else if(funkcja[0].equals("scenariuszTekstowo")){
-            scenario.zapiszDoPliku();
+            ZapiszVisitor v = new ZapiszVisitor();
+            scenario.accept(v);
             wynik = "Scenariusz zapisano do pliku ZapisanyScenariusz.txt";
 
         }
-
+        else if(funkcja[0].equals("ileAktorow")){
+            AktorzyVisitor v = new AktorzyVisitor();
+            scenario.accept(v);
+            int temp = v.getIleAktorow();
+            wynik = "Kroki z aktorami = " + String.valueOf(temp);
+            kon.toJSONLiczba(temp, 1, "output.json");
+        }
+        else if(funkcja[0].equals("ileSlow")){
+            SlowaVisitor v = new SlowaVisitor();
+            scenario.accept(v);
+            int temp = v.getIleSlow();
+            wynik = "Ilosc slow = " + String.valueOf(temp);
+            kon.toJSONLiczba(temp, 1, "output.json");
+        }
+        else if(funkcja[0].equals("szukajAktora")){
+            System.out.println(funkcja[1]);
+            SzukajAVisitor v = new SzukajAVisitor(funkcja[1]);
+            scenario.accept(v);
+            List<String> temp = v.getZAktorem();
+            StringBuilder sb = new StringBuilder();
+            for(String s : temp){
+                sb.append(s);
+            }
+            wynik = "Kroki z aktorem: " + sb.toString();
+            System.out.println(temp);
+            kon.toJSONStringArray(temp, "output.json");
+        }
+        else if(funkcja[0].equals("szukajKlucza")){
+            System.out.println(funkcja[1]);
+            SzukajKVisitor v = new SzukajKVisitor(funkcja[1]);
+            scenario.accept(v);
+            List<String> temp = v.getZKluczem();
+            StringBuilder sb = new StringBuilder();
+            for(String s : temp){
+                sb.append(s);
+            }
+            wynik = "Kroki z kluczem: " + sb.toString();
+            System.out.println(temp);
+            kon.toJSONStringArray(temp, "output.json");
+        }
 
 
         return wynik;

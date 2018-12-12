@@ -1,5 +1,6 @@
 package pl.put.poznan.transformer.app;
 
+
 /**
  * Klasa reprezentujaca krok scenariusza.
  */
@@ -12,6 +13,10 @@ public class Krok {
     /** Konstruktor domyslny kroku.
      *
      */
+
+
+
+
     public Krok(){}
 
     /**Konstruktor kroku z aktorem i wierszem.
@@ -30,6 +35,39 @@ public class Krok {
         this.wiersz = wiersz;
         this.aktor = "";
     }
+
+    /**
+     * Zlicza ile jest slow w danym kroku
+     * @return ilosc slow w danym kroku
+     */
+    public int ileSlowWKroku() {
+        String tempWiersz = wiersz;
+        if(tempWiersz == null  || tempWiersz == "") {
+            return 0;
+        }
+        int ileSlow = 1;
+        while(tempWiersz.substring(0,1).equalsIgnoreCase(" ")) {
+            if(tempWiersz.length() == 1) {
+                return 0;
+            }
+            tempWiersz = tempWiersz.substring(1);
+        }
+
+
+        while(tempWiersz.indexOf(" ")>0) {
+            tempWiersz = tempWiersz.substring(tempWiersz.indexOf(" "));
+            ileSlow++;
+            while(tempWiersz.substring(0,1).equalsIgnoreCase(" ")) {
+                tempWiersz = tempWiersz.substring(1);
+                if(tempWiersz.length() == 1) {
+                    break;
+                }
+            }
+        }
+        return ileSlow;
+    }
+
+
     /** Zwraca aktora, zawartego w kroku.
      * @return aktor
      * */

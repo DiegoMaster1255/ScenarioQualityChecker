@@ -3,11 +3,10 @@ package pl.put.poznan.transformer.app;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * Klasa reprezentujaca podscenariusz.
  */
-public class Podscenariusz extends ScenariuszGlowny{
+public class Podscenariusz extends ScenariuszGlowny implements Visitable {
 
     /** glebokosc podscenariusza.*/
     int zagniezdzenie;
@@ -17,6 +16,11 @@ public class Podscenariusz extends ScenariuszGlowny{
     int liczbaKrokow;
     /** Slowo kluczowe w podscenariuszu.*/
     String slowoKlucz;
+
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 
     /**
      * Konstruktor podscenariusza.
@@ -43,12 +47,17 @@ public class Podscenariusz extends ScenariuszGlowny{
         this.slowoKlucz = "";
     }
 
-
-    /*public void wypelnij(int zagniezdzenie, int liczbaKrokow, String slowoKlucz) {
-        this.zagniezdzenie = zagniezdzenie;
-        this.liczbaKrokow = liczbaKrokow;
-        this.slowoKlucz = slowoKlucz;
-    }*/
+    /**
+     * Zlicza ile jest slow w danym Podscenariuszu
+     * @return ilosc slow w danym Podscenariuszu
+     */
+    public int ileSlowWPodscenariuszu() {
+        int ileSlow = 0;
+        for(int i = 0; i<listaKrokow.size(); i++) {
+            ileSlow += listaKrokow.get(i).ileSlowWKroku();
+        }
+        return ileSlow;
+    }
 
 
     /**
