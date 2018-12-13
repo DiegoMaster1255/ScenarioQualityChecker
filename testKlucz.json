@@ -1,0 +1,35 @@
+{
+  "Tytul":"test",
+  "Aktorzy" : ["Bibliotekarz"],
+  "Aktorzy systemowi" : ["System"],
+  "Scenariusz glowny" :{
+       "Podscenariusze":[
+        {
+            "kroki":[
+			"Bibliotekarz wybiera opcje dodania nowej pozycji ksiazkowej",
+			"Wyswietla sie formularz.",
+			"Bibliotekarz podaje dane ksiazki.",
+			"IF: drugi"]
+		}
+          ,
+          {
+            "kroki":[
+              "\tBibliotekarz wybiera opcje definiowania egzemplarzy",
+              "\tSystem prezentuje zdefiniowane egzemplarze",
+              "\tIF: drugi:"]
+          },
+          {
+            "kroki":[
+              "\t\tBibliotekarz wybiera opcje dodania egzemplarza"]
+          }
+          
+          
+         ]
+         
+       }
+  
+   
+               
+                
+  
+}

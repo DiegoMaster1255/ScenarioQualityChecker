@@ -1,4 +1,6 @@
-package pl.put.poznan.transformer.app;
+package pl.put.poznan.transformer.test;
+
+import pl.put.poznan.transformer.app.Krok;
 
 import static org.junit.Assert.assertEquals;
 

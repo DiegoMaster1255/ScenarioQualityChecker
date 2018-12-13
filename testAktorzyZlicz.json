@@ -1,0 +1,43 @@
+{
+  "Tytul":"Dodanie ksiazki",
+  "Aktorzy" : ["Bibliotekarz"],
+  "Aktorzy systemowi" : ["System"],
+  "Scenariusz glowny" :{
+       "Podscenariusze":[
+        {
+            "kroki":[
+			"wybiera opcje dodania nowej pozycji ksiazkowej",
+			"Wyswietla sie formularz.",
+			"podaje dane ksiazki.",
+			"IF: pragnie dodac egzemplarze ksiazki"]
+		}
+          ,
+          {
+            "kroki":[
+              "\twybiera opcje definiowania egzemplarzy",
+              "\tprezentuje zdefiniowane egzemplarze",
+              "\tFOR EACH egzemplarz:"]
+          },
+          {
+            "kroki":[
+              "\t\twybiera opcje dodania egzemplarza",
+              "\t\tprosi o podanie danych egzemplarza",
+              "\t\tpodaje dane egzemplarza i zatwierdza.",
+              "\t\tinformuje o poprawnym dodaniu egzemplarza i prezentuje zaktualizowana liste egzemplarzy."]
+          },
+          {
+            "kroki":[
+              "zatwierdza dodanie ksiazki.",
+              "informuje o poprawnym dodaniu ksiazki."]
+          }
+          
+          
+         ]
+         
+       }
+  
+   
+               
+                
+  
+}

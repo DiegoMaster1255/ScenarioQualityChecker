@@ -1,0 +1,30 @@
+{
+  "Tytul":"Dodanie ksiazki",
+  "Aktorzy" : ["Bibliotekarz"],
+  "Aktorzy systemowi" : ["System"],
+  "Scenariusz glowny" :{
+       "Podscenariusze":[
+        {
+            "kroki":[
+			"IF: Bibliotekarz pragnie dodac egzemplarze ksiazki"]
+		}
+          ,
+          {
+            "kroki":[
+              "\tFOR EACH egzemplarz:"]
+          },
+          {
+            "kroki":[
+              "\t\tSystem informuje o poprawnym dodaniu egzemplarza i prezentuje zaktualizowana liste egzemplarzy."]
+          }
+          
+          
+         ]
+         
+       }
+  
+   
+               
+                
+  
+}
