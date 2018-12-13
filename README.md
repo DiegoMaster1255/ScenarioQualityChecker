@@ -35,11 +35,18 @@ bledneKroki - które kroki nie zaczynają się od aktora
 
 slowaKluczowe - ile kroków zaczyna się od słów kluczowych
 
-scenariuszDoPoziomu - zapisuje scenariusz do określonego zagłębienia
+scenariuszTekstowo - zapisuje scenariusz w pliku ZapisanyScenariusz.txt
 
-Uwaga! w przypadku tej funkcji należy dodać kolejny argument do parametru "funkcja", który odpowiada poziomowi zagłębienia.
+ileAktorow - ile kroków posiada na początku aktora
+
+ileSlow - ile słów zawiera cały scenariusz
+
+Uwaga! w przypadku poniższych funkcji należy dodać kolejny argument do parametru "funkcja"
+
+scenariuszDoPoziomu - zapisuje scenariusz do określonego zagłębienia, drugi parametr to poziom zagłębienia
 
 Przykład: localhost:8080/Scenariusz?funkcja=scenariuszDoPoziomu&funkcja=2.
 
-scenariuszTekstowo - zapisuje scenariusz w pliku ZapisanyScenariusz.txt
+szukajAktora - wypisuje wszystkie kroki z danym aktorem, drugi parametr to nazwa aktora
 
+szukajKlucza - wypisuje wszystkie kroki z danym słowem kluczowym, drugi parametr to słowo kluczowe
