@@ -36,7 +36,6 @@ public class SQChecker {
         catch (IOException e) {
             e.printStackTrace();
         }
-
         ScenariuszGlowny SC = new ScenariuszGlowny();
 
 

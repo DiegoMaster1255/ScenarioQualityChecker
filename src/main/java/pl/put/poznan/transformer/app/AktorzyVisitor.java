@@ -8,16 +8,22 @@ package pl.put.poznan.transformer.app;
 public class AktorzyVisitor implements Visitor {
 
     private int ileAktorow;
+
+    public AktorzyVisitor(){
+        ileAktorow = 0;
+    }
+
     /**
      * zapisuje scenariusz do pliku.
      */
     public void visit(ScenariuszGlowny scenariuszGlowny) {
         for(int i = 0; i<scenariuszGlowny.listaScenariuszy.size(); i++)
         {
-            for(int j =0; j<scenariuszGlowny.listaScenariuszy.get(i).listaKrokow.size(); j++)
+            for(int j =0; j<scenariuszGlowny.getListaScenariuszy().get(i).getListaKrokow().size(); j++)
             {
-                if(scenariuszGlowny.listaScenariuszy.get(i).listaKrokow.get(j).aktor != "")
+                if(scenariuszGlowny.getListaScenariuszy().get(i).getListaKrokow().get(j).getAktor() != "") {
                     ileAktorow++;
+                }
             }
         }
     }

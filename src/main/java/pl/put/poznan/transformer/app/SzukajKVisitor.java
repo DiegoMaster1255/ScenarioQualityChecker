@@ -20,8 +20,8 @@ public class SzukajKVisitor implements Visitor {
 
     public void visit(ScenariuszGlowny scenariuszGlowny) {
         for (int i = 0; i < scenariuszGlowny.listaScenariuszy.size(); i++) {
-            if(scenariuszGlowny.listaScenariuszy.get(i).slowoKlucz.equalsIgnoreCase(klucz)) {
-                listaKrokowZKluczem.add(scenariuszGlowny.listaScenariuszy.get(i).listaKrokow.get((scenariuszGlowny.listaScenariuszy.get(i).listaKrokow.size()-1)).wiersz);
+            if(scenariuszGlowny.listaScenariuszy.get(i).getSlowoKlucz().equalsIgnoreCase(klucz)) {
+                listaKrokowZKluczem.add(scenariuszGlowny.listaScenariuszy.get(i).getListaKrokow().get((scenariuszGlowny.listaScenariuszy.get(i).getListaKrokow().size()-1)).wiersz);
             }
         }
     }
